@@ -8,7 +8,8 @@ export default function Hotels() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/hotels')
+    const API = process.env.REACT_APP_API_URL;
+    fetch(`${API}/api/hotels`)
       .then(res => res.json())
       .then(data => { setHotels(data); setLoading(false); })
       .catch(() => setLoading(false));

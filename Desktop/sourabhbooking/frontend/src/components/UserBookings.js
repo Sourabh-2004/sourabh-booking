@@ -12,7 +12,8 @@ export default function UserBookings() {
     setError('');
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:8000/api/bookings', {
+      const API = process.env.REACT_APP_API_URL;
+      const res = await fetch(`${API}/api/bookings`, {
         headers: { 'Authorization': token }
       });
       const data = await res.json();
@@ -35,7 +36,8 @@ export default function UserBookings() {
     setCancelStatus('');
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:8000/api/bookings/${bookingId}`, {
+      const API = process.env.REACT_APP_API_URL;
+      const res = await fetch(`${API}/api/bookings/${bookingId}`, {
         method: 'DELETE',
         headers: { 'Authorization': token }
       });

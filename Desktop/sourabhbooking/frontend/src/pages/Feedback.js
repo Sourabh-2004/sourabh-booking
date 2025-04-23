@@ -13,7 +13,8 @@ export default function Feedback() {
     const token = localStorage.getItem('token');
     if (!token) return setResponse('Please login first.');
     try {
-      const res = await fetch('http://localhost:8000/api/feedback', {
+      const API = process.env.REACT_APP_API_URL;
+      const res = await fetch(`${API}/api/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

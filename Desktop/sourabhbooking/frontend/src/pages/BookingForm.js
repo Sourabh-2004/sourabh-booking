@@ -15,7 +15,8 @@ export default function BookingForm({ hotelId }) {
     setStatus('');
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:8000/api/bookings', {
+      const API = process.env.REACT_APP_API_URL;
+      const res = await fetch(`${API}/api/bookings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
