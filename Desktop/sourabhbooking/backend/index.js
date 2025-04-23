@@ -8,14 +8,14 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3005', 'http://localhost:4000', 'https://sourabh-booking.vercel.app'],
+  origin: ['http://localhost:3000', 'http://localhost:3005', 'http://localhost:4000', 'https://sourabh-booking.vercel.app','https://sourabh-booking-mxdr89zi2-sourabh-2004s-projects.vercel.app'],
   credentials: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: '*',
   optionsSuccessStatus: 200
 }));
 app.options('*', cors({
-  origin: ['http://localhost:3000', 'http://localhost:3005', 'http://localhost:4000', 'https://sourabh-booking.vercel.app'],
+  origin: ['http://localhost:3000', 'http://localhost:3005', 'http://localhost:4000', 'https://sourabh-booking.vercel.app','https://sourabh-booking-mxdr89zi2-sourabh-2004s-projects.vercel.app'],
   credentials: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: '*',
